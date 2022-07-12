@@ -1,10 +1,10 @@
 ---
-title: "fitcorridor Vignette (Version 0.1)"
+title: "fitcorridor vignette v1.0.0"
 author: "Tristan Nuñez"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{fitcorridor Vignette (Version 0.1)}
+  %\VignetteIndexEntry{fitcorridor vignette v1.0.0}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -33,22 +33,27 @@ The code requires the following R packages be installed: gdistance, parallel, rg
 We'll begin by fitting a cost distance model to a set of simulated movement tracks. The model we will fit is $conductance = e^{\beta \cdot Human Footprint}$. For each movement track, the code will find the value of $\beta$ that maximizes the likelihood of the data given the model. It will also find the optimal value of $\lambda$, the rate parameter of the exponential distribution used to model the probability of deviations from the least cost path (see Methods Section 2.4 in the manuscript). 1/λ is the mean residual cost distance of the fitted distribution, allowing us to directly assess how far on average an animal deviates from the modeled least cost path in cost distance units.
 
 ### Setting up
-First, set your working directory to the vignette folder:
+First, make sure your working directory is the fitcorridor folder:
 ```{r, message=F}
-setwd("C:/fitcorridor_0.1")
+getwd()
 ```
 Source the R file containing the functions.
-```{r, message=F}
+```{r, message=F, }
 source("./fitcorridor_functions.R")
 ```
 Read in the animal movement tracks. In this case, we will be using a set of 15 tracks simulated from a human footprint surface. 
-```{r message=F}
+```{r message=F, fig.width = 6, fig.asp=1}
 tracks<-readOGR("./data/tracks/HF_sim_tracks.shp", stringsAsFactors = F)
-plot(tracks)
 # Set the coordinate reference system
 mycrs <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0"
 crs(tracks) <- mycrs
+# turn the tracks into SpatialLinesDataFrame just for plotting
+tracks$id <- tracks$trackid # TrackSPDFtoTrackSPLFLines requires an $id column
+tracks.as.lines <- TrackSPDFtoTrackSPLFLines(tracks)
+plot(tracks.as.lines)
+plot(tracks, add=T, col="red", pch=".", cex=1.2)
 ```
+
 Read in the environmental covariates. Here, we will read in the human footprint surface previously used to simulate the movement tracks. This data is from Leu et al. 2008 (https://doi.org/10.1890/07-0480.1, http://sagemap.wr.usgs.gov/), cropped to the Boise, ID area.  
 ```{r, message=F, fig.width = 6, fig.asp=1}
 # Higher values represent more human influence
@@ -59,7 +64,8 @@ crs(covars) <- mycrs
 names(covars) <- c("HF") # if more than one layer, use this format: c("HF", "DEM")
 # plot to check 
 plot(covars)
-plot(tracks, add=T, pch=".")
+plot(tracks.as.lines, add=T, cex=.75)
+plot(tracks, add=T, pch=".", col="red", cex=1.2)
 ```
 
 The simulated tracks, which move between randomly selected start and end points in the upper and lower quarter of the human footprint raster, avoid areas of high human footprint. This is because they were simulated using a $\beta$ value of -1.
@@ -82,7 +88,7 @@ FitSingleModel(
   Lt.tiff = T
 )
 ```
-This takes several minutes on a laptop (Intel(R) Core(TM) i7-4910MQ CPU @ 2.90GHz) with 4 cores. Disregard the "In .local(x, ...) : all fact(s) were 1, nothing to aggregate" warning. Let's explore each of the arguments for the FitSingleModel function:
+This takes around ten minutes on a PC laptop (Intel(R) i7 CPU @ 2.90GHz with 4 cores). Disregard the "In .local(x, ...) : all fact(s) were 1, nothing to aggregate" warning. Let's explore each of the arguments for the FitSingleModel function:
 
 #### tracks
 A SpatialPointsDataFrame. The dataframe needs to have a 'trackid' column with a unique id for each movement track. Must have the same coordinate reference system as `covars`. The movement track needs to be a directed movement, so that it is consistent with the assumptions of cost distance modeling, particularly that the animal is acting to minimize its movement costs (or maximize its movement benefits) as it moves between the start and end of the track. For example, any loops (a track doubling back on itself) would violate this assumption and inflate the amount of variance in the model fit.

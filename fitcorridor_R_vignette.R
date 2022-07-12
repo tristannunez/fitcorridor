@@ -2,7 +2,7 @@
 #' To accompany "A statistical framework for predicting migration corridors"
 #' Nuñez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M.   
 #' July 12 2022
-#' fitcorridor version 0.1
+#' fitcorridor v1.0.0
 #' Tristan Nuñez
 
 #' Overview
@@ -20,8 +20,8 @@
 #'  f. param.factor = Coefficient scaling value to aid in model fitting (for anisotropic [denoted using aniso() in the model formula] variables)
 #' See manuscript for explanation of variable names, e.g. Lh, Lts, beta_h, beta_ts
 
-# 1. Set your working directory to wherever you unzipped the corridor fitting code folder
-setwd("C:/fitcorridor_0.1")
+# 1. Set your working directory to the location of the fitcorridor folder
+setwd("C:/fitcorridor")
 
 # 2. Install needed packages
 # If the packages in "packages" below are already installed, you can skip this step
