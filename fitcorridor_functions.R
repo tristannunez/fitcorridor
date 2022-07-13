@@ -1,8 +1,8 @@
 # Corridor Fitting Functions for Vignette Illustrating Statistical Corridor Modeling using Maximum Likelihood
 #' To accompany "A statistical framework for predicting migration corridors using empirical data"
-#' Nuñez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M.   
+#' NuÃ±ez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M.   
 # 12 July 2022
-# v1.0.0
+# v0.0.1
 # Tristan Nunez
 # tristan.nunez@gmail.com
 

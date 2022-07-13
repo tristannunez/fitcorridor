@@ -1,10 +1,10 @@
 ---
-title: "fitcorridor vignette v1.0.0"
+title: "fitcorridor vignette v0.0.1"
 author: "Tristan Nuñez"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{fitcorridor vignette v1.0.0}
+  %\VignetteIndexEntry{fitcorridor vignette v0.0.1}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

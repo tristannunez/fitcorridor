@@ -1,8 +1,8 @@
 ---
 title: fitcorridor
-author: Tristan Nuñez
-date: July 12, 2022
-version: 1.0.0
+author: Tristan NuÃ±ez
+date: July 13, 2022
+version: 0.0.1
 --- 
 
 Description:

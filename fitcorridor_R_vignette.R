@@ -1,9 +1,9 @@
 #' Vignette Illustrating Statistical Corridor Modeling using Maximum Likelihood
 #' To accompany "A statistical framework for predicting migration corridors"
-#' Nuñez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M.   
-#' July 12 2022
-#' fitcorridor v1.0.0
-#' Tristan Nuñez
+#' NuÃ±ez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M.   
+#' July 13 2022
+#' fitcorridor v0.0.1
+#' Tristan NuÃ±ez
 
 #' Overview
 #' Inputs required for modeling:
