@@ -5,6 +5,8 @@ date: July 13, 2022
 version: 0.1.0
 --- 
 
+[![DOI](https://zenodo.org/badge/513299383.svg)](https://zenodo.org/badge/latestdoi/513299383)
+
 Description:
 This code accompanies the article "A statistical framework for predicting migration corridors" by Nuñez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M., accepted for publication in the journal Methods in Ecology and Evolution. 
 
