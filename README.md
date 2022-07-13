@@ -18,7 +18,4 @@ The code requires the following R packages: gdistance, parallel, rgdal, ggplot2,
 Contributing: 
 github.com/tristannunez/fitcorridor
 
-Date: July 12 2022
-Version: Version 1.0.0
-Author: Tristan Nuñez
 
