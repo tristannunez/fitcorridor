@@ -1,10 +1,10 @@
 ---
-title: "fitcorridor vignette v0.0.1"
+title: "fitcorridor vignette v0.1.0"
 author: "Tristan Nuñez"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{fitcorridor vignette v0.0.1}
+  %\VignetteIndexEntry{fitcorridor vignette v0.1.0}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -34,7 +34,7 @@ We'll begin by fitting a cost distance model to a set of simulated movement trac
 
 ### Setting up
 First, make sure your working directory is the fitcorridor folder:
-```{r, message=F}
+```{r, message=F, results=F}
 getwd()
 ```
 Source the R file containing the functions.

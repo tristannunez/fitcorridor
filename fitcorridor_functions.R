@@ -2,7 +2,7 @@
 #' To accompany "A statistical framework for predicting migration corridors using empirical data"
 #' Nuñez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M.   
 # 12 July 2022
-# v0.0.1
+# fitcorridor v0.1.0
 # Tristan Nunez
 # tristan.nunez@gmail.com
 
