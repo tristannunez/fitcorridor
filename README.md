@@ -1,23 +1,24 @@
 ---
 title: fitcorridor
 author: Tristan Nuñez
-date: July 13, 2022
-version: 0.1.0
+date: March 30, 2023
+version: 0.3.6
 --- 
 
 [![DOI](https://zenodo.org/badge/513299383.svg)](https://zenodo.org/badge/latestdoi/513299383)
 
 Description:
-This code accompanies the article "A statistical framework for predicting migration corridors" by Nuñez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M., accepted for publication in the journal Methods in Ecology and Evolution. 
 
-This project contains the R functions used in fitting cost-distance models to the migration movement tracks used in the manuscript. In addition, it contains a vignette that illustrates the model fitting process. 
+This code is an updated version of the original fitcorridor 0.1.0 code, which accompanied the article "A statistical framework for predicting migration corridors" by Nuñez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M., published in the journal Methods in Ecology and Evolution in 2022. 
 
-Begin by reading the Rmarkdown vignette HTML file (fitcorridor_rmarkdown_vignette.html), and then run the code in fitcorridor_vignette.R. 
+To begin, open the fitcorridor_0.3.6_dev.Rproj file in RStudio (which will set the working directory for you to the appropriate folder), and then open the scripts in the /code/ folder. Begin with _step1_fitcorridor_fit_a_model_0.3.6_dev.R
+
+The original release (fitcorridor 0.1.0) can be accessed at https://zenodo.org/record/6828967#.ZCV9svbMKSQ. 
+
+This project contains the R functions used in fitting cost-distance models to the simulated movement tracks for purposes of illustrating the approach. 
 
 Prerequisites: 
-The code requires the following R packages: gdistance, parallel, rgdal, ggplot2, ggspatial, and rgeos.
+The code requires the following R packages: terra, raster, gdistance, parallel, rgdal, ggplot2, ggspatial, and rgeos.
 
 Contributing: 
 github.com/tristannunez/fitcorridor
-
-
