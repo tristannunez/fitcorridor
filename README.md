@@ -22,3 +22,5 @@ The code requires the following R packages: terra, raster, gdistance, parallel, 
 
 Contributing: 
 github.com/tristannunez/fitcorridor
+
+TEST : Change on branch
