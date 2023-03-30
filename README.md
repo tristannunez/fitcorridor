@@ -11,7 +11,7 @@ Description:
 
 This code is an updated version of the original fitcorridor 0.1.0 code, which accompanied the article "A statistical framework for predicting migration corridors" by Nuñez, T., Hurley, M., Graves, T. Ortega, A. Sawyer, H., Fattebert, J., Merkle, J., and Kauffman, M., published in the journal Methods in Ecology and Evolution in 2022. 
 
-To begin, open the fitcorridor_0.3.6_dev.Rproj file in RStudio (which will set the working directory for you to the appropriate folder), and then open the scripts in the /code/ folder. Begin with _step1_fitcorridor_fit_a_model_0.3.6_dev.R
+To begin, open the fitcorridor.Rproj file in RStudio (which will set the working directory for you to the appropriate folder), and then open the scripts in the /code/ folder. Begin with _step1_fit_a_model.R
 
 The original release (fitcorridor 0.1.0) can be accessed at https://zenodo.org/record/6828967#.ZCV9svbMKSQ. 
 

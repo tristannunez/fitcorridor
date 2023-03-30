@@ -1,8 +1,8 @@
 # fitcorridor demo code step 3: predict corridor between a new set of endpoints
-# 29 March 2023
+# 30 March 2023
 # Tristan Nuñez
 # tnunez@uw.edu
-# fitcorridor version 0.3.5
+# fitcorridor version 0.3.6
 # built with R 4.2.3
 
 library(ggplot2)
@@ -10,7 +10,7 @@ library(parallel)
 library(gdistance)
 library(rgdal)
 library(pROC)
-source("./code/fitcorridor_functions_0.3.5.R")
+source("./code/fitcorridor_functions.R")
 
 # read in the dataframe with the fitted coefficients 
 allbetas <- read.csv("./test1/iso(HF)/beta_by_groups.csv")

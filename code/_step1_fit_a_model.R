@@ -1,8 +1,8 @@
 # fitcorridor demo code step 1: fit a model
-# 29 March 2023
+# 30 March 2023
 # Tristan Nuñez
 # tnunez@uw.edu
-# fitcorridor version 0.3.5
+# fitcorridor version 0.3.6
 # built with R 4.2.3
 # key package versions: gdistance_1.6, raster_3.6-20, terra_1.7-18
 
@@ -31,7 +31,7 @@ library(pROC)
 
 # 2. Source the code used for model fitting
 
-source("./code/fitcorridor_functions_0.3.6_dev.R")
+source("./code/fitcorridor_functions.R")
 
 # 3. Read in tracks
 # HF_sim_tracks.shp consists of a set of tracks simulated from a human footprint surface
@@ -58,9 +58,8 @@ head(tracks)
 # Higher values represent more human influence
 covars <- stack("./data/covariates/HF.tif")
 
-# temporary to speed up testing
-covars <- stack(aggregate(covars, fact=4))
-# end temporary to speed up testing
+# If you wish to speed up run time on this demo code, you can aggregate the covariates to a coarser spatial resolution. Do this by uncommenting and then running the following line.
+# covars <- stack(aggregate(covars, fact=4))
 
 # specify the Coordinate Reference System
 crs(covars) <- mycrs 
@@ -78,7 +77,7 @@ FitModels(tracks.spdf = tracks,
           covars = covars,
           model.string = "iso(HF)", # to add terms, use "+" with no spaces (e.g., "iso(HF)+iso(DEM)"). The iso() specifies that cost distances are calculated isotropically. 
           directions = 8, # 8 or 16
-          startvals = c(-15, 0),# the first term is the start value for log(lambda); the 2others correspond to the model terms (in order). Generally, use values between -8 and -15 for loglambda, and 0 for beta coefficients.
+          startvals = c(-15, 0),# the first term is the start value for log(lambda); the remaining terms are start values for the coefficients of the model terms (in order). Generally, use values between -8 and -15 for loglambda (experimentation required), and 0 for beta coefficients.
           dataset = "./test1", # can be anything, but needs to start with "./", this folder is where outputs are written in the working directory
           n.inside.cores = 2,
           n.outside.cores = 2,

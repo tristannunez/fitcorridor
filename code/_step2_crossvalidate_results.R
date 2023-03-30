@@ -1,11 +1,11 @@
 # fitcorridor demo code step 2: crossvalidate results
-# 29 March 2023
+# 30 March 2023
 # Tristan Nuñez
 # tnunez@uw.edu
-# fitcorridor version 0.3.5
+# fitcorridor version 0.3.6
 # built with R 4.2.3
 
-# NOTE: This script only works with relatively small landscapes due to way the calc_ROC() function (see fitcorridor_functions_...) is currently written, because it reads in the entire landscape into memory. Will require updating for landscapes with large numbers of cells. 
+# NOTE: This script only works with relatively small landscapes due to way the calc_ROC() function (see fitcorridor_functions.R) is currently written, because it reads in the entire landscape into memory. Will require updating for landscapes with large numbers of cells. 
 # ALSO NOTE: As currently written, this code calculates the ROC and AUC metrics on the training data. The code will need to be modified for cases where separate test data are used to calculate ROC and AUC metrics by changing the object "tracks.spdf" to consist of test data, and specifying the desired beta coefficients for the test by changing the object "focalbetadf". 
 
 # this script calculates the ROC and AUC for null and fitted models, and writes out a plot comparing the fitted and null models, as well as a .csv that can be later used to compare among different models
@@ -14,7 +14,7 @@ library(parallel)
 library(gdistance)
 library(rgdal)
 library(pROC)
-source("./code/fitcorridor_functions_0.3.5.R")
+source("./code/fitcorridor_functions.R")
 
 # read in the dataframe with the fitted coefficients 
 #allbetas <- read.csv("./socal_300m/iso(slope)/beta_ts.csv")

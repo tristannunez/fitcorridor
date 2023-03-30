@@ -1,10 +1,16 @@
+# fitcorridor functions
+# 29 March 2023
+# Tristan Nuñez
+# tnunez@uw.edu
+# fitcorridor version 0.3.6
+# built with R 4.2.3
+# key package versions: gdistance_1.6, raster_3.6-20, terra_1.7-18
+
+
 #' TODO: 
 #' 1. write function that translates output from optim into summary statistics.
 #' 2. have objective function calculate NLL from a null model
 #' 3. write null NLL to output dataframe
-#' 
-#' Changes in 0.3.6 dev version:
-#' 1. update use of linewidth instead of size for ggplot functions
 #' 
 
 FitModels <- function(tracks.spdf,
@@ -269,7 +275,7 @@ gc()
       coord_fixed()+
       scale_fill_viridis_c(option = "viridis", direction=1, begin = .3)+
       geom_path(data=trackline.gg, aes(x,y, group=id), 
-                linewidth = 0.5, colour="black",  # test replace size with linewidth
+                size = 0.5, colour="black",  
                 linetype = "dashed", alpha=0.3)+
       #      geom_point(data=trackpoint.gg, aes(x,y,group=id), colour="red", size=0.1)+
       theme_bw()+
@@ -507,7 +513,7 @@ PlotTracks2 <- function(pars, model.list.by.track, #param.factor,
       coord_fixed()+
       scale_fill_viridis_c(option = "viridis", direction=1, begin = .3)+
       geom_path(data=trackline.gg, aes(x,y, group=id), 
-                linewidth = 0.05, colour="black",  # test change size to linewidth 3/29/2023
+                size = 0.05, colour="black", 
                 linetype = "dashed")+
       geom_point(data=trackpoint.gg, aes(x,y,group=id), colour="red", size=0.1)+
       theme_bw()+
