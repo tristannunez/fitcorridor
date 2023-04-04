@@ -402,7 +402,7 @@ ModelListToTransMatList <- function(X, directions){
     coef <- X[[4]]
     transition.matrix <- gdistance::transition(covar, transitionFunction=function(x){x[2] - x[1]}, directions=directions, symm=FALSE) # calculate a transition matrix
     delt <- gdistance::geoCorrection(transition.matrix, type="c") 
-    adj <- gdistance::adjacent(covar, cells=1:ncell(covar), pairs=TRUE,  directions=directions)
+    adj <- raster::adjacent(covar, cells=1:ncell(covar), pairs=TRUE,  directions=directions)
     speed <- delt
     speed[adj] <-  exp(eval(parse(text=form))) # note that "form" is "(abs(delt[adj])*coef)"
     tr1 <- speed
