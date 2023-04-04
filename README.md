@@ -13,7 +13,7 @@ This code is an updated version of the original fitcorridor 0.1.0 code, which ac
 
 To begin, open the fitcorridor.Rproj file in RStudio (which will set the working directory for you to the appropriate folder), and then open the scripts in the /code/ folder. Begin with _step1_fit_a_model.R
 
-The original release (fitcorridor 0.1.0) can be accessed at https://zenodo.org/record/6828967#.ZCV9svbMKSQ or from the old releases link on this github page. 
+The original release (fitcorridor 0.1.0) can be accessed here: github.com/tristannunez/fitcorridor/releases
 
 This project contains the R functions used in fitting cost-distance models to the simulated movement tracks for purposes of illustrating the approach. 
 
